@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jSignature/2.1.3/jSignature.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#canvas").jSignature();
+</div><div>
+            $("#clear").click(function () {
+                $("#canvas").jSignature("reset");
+                $("img").remove();
+            });
+
+            $("#download-image").click(function () {
+                var i = new Image();
+                i.src = $("#canvas").jSignature("getData");
+                $(i).appendTo($("#someelement"));
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="canvas" style="background-color:#ffffee;"></div>
+    <button id="clear">クリア</button>
+    <button id="download-image">画像ダウンロード</button>
+    <div id="someelement"></div>
+</body>
+</html>
