@@ -1,30 +1,14 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <div>
-        <script>
-            $(document).ready(function () {
-                $("#canvas").jSignature();
-
-                $("#clear").click(function () {
-                    $("#canvas").jSignature("reset");
-                    $("img").remove();
-                });
-
-                $("#download-image").click(function () {
-                    var i = new Image();
-                    i.src = $("#canvas").jSignature("getData");
-                    $(i).appendTo($("#someelement"));
-                });
-
-            });
-        </script>
-    </div>
+    <meta charset="utf-8" />
+    <title></title>
 </head>
 <body>
-    <div id="canvas" style="background-color:#ffffee;"></div>
-    <button id="clear">クリア</button>
-    <button id="download-image">画像ダウンロード</button>
-    <div id="someelement"></div>
+    <?php
+    print $_GET['nickname'];
+    $img_name = $_FILES['file']['name'];
+    ?>
 </body>
 </html>
